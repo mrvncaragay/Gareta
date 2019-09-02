@@ -10,6 +10,7 @@ export default {
     letterSpacing: '-0.24px',
     lineHeight: '40px'
   },
+
   h2: {
     color: palette.text.primary,
     fontWeight: '500',
@@ -23,7 +24,9 @@ export default {
     fontWeight: '400',
     fontSize: '24px',
     letterSpacing: '-1.5px',
-    lineHeight: '28px'
+    lineHeight: '28px',
+    textAlign: 'center',
+    textTransform: 'uppercase'
   },
 
   h4: {

@@ -5,8 +5,6 @@ export default makeStyles(theme => ({
     display: 'flex',
     width: '100%',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
-
-    border: '1px solid gray'
+    justifyContent: 'space-between'
   }
 }));
