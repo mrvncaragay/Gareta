@@ -6,7 +6,7 @@ import { Directory } from '../../Components';
 // Component styles
 import styles from './styles';
 
-const HomePage = () => {
+const ShopPage = () => {
   const classes = styles();
 
   return (
@@ -16,4 +16,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default ShopPage;

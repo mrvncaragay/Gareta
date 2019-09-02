@@ -5,18 +5,20 @@ export default {
 
   h1: {
     color: palette.text.primary,
-    fontWeight: '500',
+    fontWeight: '300',
     fontSize: '35px',
-    letterSpacing: '-0.24px',
-    lineHeight: '40px'
+    letterSpacing: '-1.5px',
+    lineHeight: '40px',
+    textTransform: 'uppercase'
   },
 
   h2: {
     color: palette.text.primary,
-    fontWeight: '500',
+    fontWeight: '300',
     fontSize: '29px',
-    letterSpacing: '-0.24px',
-    lineHeight: '32px'
+    letterSpacing: '-1.5px',
+    lineHeight: '32px',
+    textTransform: 'uppercase'
   },
 
   h3: {
