@@ -9,9 +9,7 @@ export default makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     margin: theme.spacing(0, 1, 2, 2),
-    // Image style
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
+    overflow: 'hidden',
 
     '&.large': {
       height: '380px'
@@ -23,7 +21,28 @@ export default makeStyles(theme => ({
 
     '&:last-child': {
       marginLeft: theme.spacing(1)
+    },
+
+    '&:hover': {
+      cursor: 'pointer',
+
+      '& $backgroundImage': {
+        transform: 'scale(1.1)',
+        transition: 'transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95)'
+      },
+
+      '& $content': {
+        opacity: 0.9
+      }
     }
+  },
+
+  backgroundImage: {
+    // Image style
+    height: '100%',
+    width: '100%',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover'
   },
 
   content: {
@@ -33,6 +52,8 @@ export default makeStyles(theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    border: '1px solid black'
+    backgroundColor: theme.palette.common.white,
+    opacity: '0.6',
+    position: 'absolute'
   }
 }));

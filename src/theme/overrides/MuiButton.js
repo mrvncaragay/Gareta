@@ -8,9 +8,7 @@ export default {
   },
   contained: {
     backgroundColor: palette.common.white,
-    '&:hover': {
-      backgroundColor: palette.common.neutral
-    }
+    '&:hover': {}
   },
   label: {
     height: '14px',

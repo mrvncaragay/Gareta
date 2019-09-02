@@ -1,9 +1,5 @@
-// Palette
-import palette from '../palette';
-
 export default {
   root: {
-    backgroundColor: palette.primary.light,
     color: '#425A70'
   },
   clickable: {
@@ -12,13 +8,9 @@ export default {
     }
   },
   deletable: {
-    '&:focus': {
-      backgroundColor: palette.primary.light
-    }
+    '&:focus': {}
   },
   outlined: {
-    '&:hover': {
-      backgroundColor: palette.primary.light
-    }
+    '&:hover': {}
   }
 };
