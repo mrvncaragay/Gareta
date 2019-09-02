@@ -3,6 +3,9 @@ import React from 'react';
 // Material UI component
 import Typography from '@material-ui/core/Typography';
 
+// Shared component
+import CollectionsItem from '../CollectionsItem';
+
 // Component styles
 import styles from './styles';
 
@@ -15,8 +18,8 @@ const CollectionsPreview = ({ title, items }) => {
         {title}
       </Typography>
       <div className={classes.preview}>
-        {items.slice(0, 4).map(item => (
-          <div key={item.id}>{item.name}</div>
+        {items.slice(0, 4).map(({ id, ...rest }) => (
+          <CollectionsItem key={id} {...rest} />
         ))}
       </div>
     </div>

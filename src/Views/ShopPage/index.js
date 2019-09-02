@@ -14,11 +14,11 @@ const ShopPage = () => {
   const [state] = useState(shopData);
 
   return (
-    <>
+    <div className={classes.root}>
       {state.map(({ id, title, ...rest }) => (
         <CollectionsPreview key={id} title={title} {...rest} />
       ))}
-    </>
+    </div>
   );
 };
 

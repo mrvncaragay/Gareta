@@ -54,7 +54,7 @@ export default {
   },
 
   subtitle1: {
-    color: palette.text.primary,
+    color: palette.text.secondary,
     fontSize: '16px',
     letterSpacing: '-0.50px',
     lineHeight: '25px',
@@ -62,9 +62,9 @@ export default {
   },
 
   subtitle2: {
-    color: palette.text.secondary,
-    fontSize: '14px',
-    letterSpacing: 0,
+    color: palette.text.primary,
+    fontSize: '16px',
+    letterSpacing: '-0.50px',
     lineHeight: '16px'
   },
   body1: {

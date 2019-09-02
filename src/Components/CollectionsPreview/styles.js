@@ -11,24 +11,8 @@ export default makeStyles(theme => ({
     marginBottom: '25px'
   },
 
-  prview: {
+  preview: {
     display: 'flex',
     justifyContent: 'space-between'
   }
 }));
-
-// .collection-preview {
-//   display: flex;
-//   flex-direction: column;
-//   margin-bottom: 30px;
-
-//   .title {
-//     font-size: 28px;
-//     margin-bottom: 25px;
-//   }
-
-//   .preview {
-//     display: flex;
-//     justify-content: space-between;
-//   }
-// }
