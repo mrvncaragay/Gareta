@@ -29,12 +29,6 @@ export default {
     main: '#fa4d98',
     dark: '#a82c62'
   },
-  info: {
-    contrastText: white,
-    main: '#1070CA',
-    light: '#F1FBFC',
-    dark: '#007489'
-  },
   warning: {
     contrastText: white,
     main: '#FFB822',
@@ -49,15 +43,8 @@ export default {
     logo: '#dc6950'
   },
   text: {
-    primary: '#12161B',
-    secondary: '#66788A',
-    disabled: '#A6B1BB'
+    primary: '#5c676b',
+    secondary: '#aab6bb'
   },
-  background: {
-    default: '#f8fafc',
-    dark: '#172B4D',
-    paper: white
-  },
-  border: '#DFE3E8',
-  divider: '#DFE3E8'
+  background: {}
 };

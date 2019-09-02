@@ -17,13 +17,15 @@ export default {
     letterSpacing: '-0.24px',
     lineHeight: '32px'
   },
+
   h3: {
     color: palette.text.primary,
-    fontWeight: '500',
+    fontWeight: '400',
     fontSize: '24px',
-    letterSpacing: '-0.06px',
+    letterSpacing: '-1.5px',
     lineHeight: '28px'
   },
+
   h4: {
     color: palette.text.primary,
     fontWeight: '600',
@@ -45,14 +47,17 @@ export default {
     letterSpacing: '-0.05px',
     lineHeight: '20px'
   },
+
   subtitle1: {
     color: palette.text.primary,
     fontSize: '16px',
-    letterSpacing: '-0.05px',
-    lineHeight: '25px'
+    letterSpacing: '-0.50px',
+    lineHeight: '25px',
+    textTransform: 'uppercase'
   },
+
   subtitle2: {
-    color: palette.text.primary,
+    color: palette.text.secondary,
     fontSize: '14px',
     letterSpacing: 0,
     lineHeight: '16px'

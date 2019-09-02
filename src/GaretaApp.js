@@ -1,9 +1,10 @@
 import React from 'react';
 
-import Typography from '@material-ui/core/Typography';
+// Shared component
+import HomePage from './Views/HomePage';
 
 const GaretaApp = () => {
-  return <Typography variant='h1'>Hi There</Typography>;
+  return <HomePage />;
 };
 
 export default GaretaApp;
