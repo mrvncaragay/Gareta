@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 // Main app component
 import GaretaApp from './GaretaApp';
@@ -10,7 +11,9 @@ import theme from './theme';
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GaretaApp />
+      <BrowserRouter>
+        <GaretaApp />
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

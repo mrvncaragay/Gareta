@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 // Material UI component
 import Typography from '@material-ui/core/Typography';
@@ -6,11 +7,14 @@ import Typography from '@material-ui/core/Typography';
 // Component styles
 import styles from './styles';
 
-const MenuItem = ({ title, imageUrl, size }) => {
+const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
   const classes = styles();
 
   return (
-    <div className={`${classes.root} ${size}`}>
+    <div
+      className={`${classes.root} ${size}`}
+      onClick={() => history.push(linkUrl)}
+    >
       <div
         style={{ backgroundImage: `url(${imageUrl})` }}
         className={classes.backgroundImage}
@@ -24,4 +28,4 @@ const MenuItem = ({ title, imageUrl, size }) => {
   );
 };
 
-export default MenuItem;
+export default withRouter(MenuItem);
