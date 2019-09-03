@@ -36,14 +36,16 @@ export default {
     fontWeight: '600',
     fontSize: '20px',
     letterSpacing: '-0.06px',
-    lineHeight: '24px'
+    lineHeight: '24px',
+    textTransform: 'uppercase'
   },
   h5: {
     color: palette.text.primary,
-    fontWeight: '500',
+    fontWeight: '600',
     fontSize: '16px',
-    letterSpacing: '-0.05px',
-    lineHeight: '20px'
+    letterSpacing: '-0.5px',
+    lineHeight: '20px',
+    textTransform: 'uppercase'
   },
   h6: {
     color: palette.text.primary,
