@@ -52,6 +52,7 @@ const SignIn = () => {
           fullWidth={true}
           label='Password'
           name='password'
+          type='password'
           value={state.password}
           required
           margin='normal'

@@ -28,6 +28,8 @@ const GaretaApp = () => {
           });
         });
 
+        console.log(currentUser)
+
       }else {
         // userAuth is null when returned
         setCurrentUser(userAuth);
@@ -39,7 +41,6 @@ const GaretaApp = () => {
     };
   }, []);
   /* eslint-enable */
-
   console.log(currentUser);
   return (
     <div>

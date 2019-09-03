@@ -5,13 +5,16 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+// Auth
+import { auth, createUserProfileDocument } from '../../firebase/util';
+
 // Component styles
 import styles from './styles';
 
 const SignUp = () => {
   const classes = styles();
   const initialState = {
-    name: '',
+    displayName: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -20,15 +23,31 @@ const SignUp = () => {
 
   const handleChange = e => {
     const newState = { ...state };
-
     newState[e.target.name] = e.target.value;
-
     setState(newState);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    setState(initialState);
+    const { displayName, email, password, confirmPassword } = state;
+    if (password !== confirmPassword) {
+      alert("Password word don't match");
+      return;
+    }
+
+    try {
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+
+      await createUserProfileDocument(user, { displayName });
+
+      // Clear the form
+      setState(initialState);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -42,9 +61,9 @@ const SignUp = () => {
         <TextField
           fullWidth={true}
           label='Display Name'
-          name='name'
+          name='displayName'
           required
-          value={state.name}
+          value={state.displayName}
           onChange={handleChange}
         />
 
@@ -63,6 +82,7 @@ const SignUp = () => {
           fullWidth={true}
           name='password'
           value={state.password}
+          type='password'
           required
           label='Password'
           margin='normal'
@@ -74,6 +94,7 @@ const SignUp = () => {
           fullWidth={true}
           name='confirmPassword'
           value={state.confirmPassword}
+          type='password'
           required
           label='Confirm Password'
           margin='normal'
