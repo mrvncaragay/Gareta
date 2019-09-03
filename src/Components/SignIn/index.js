@@ -5,6 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+// Auth
+import { auth, createUserProfileDocument } from '../../firebase/util';
+
 // Component styles
 import styles from './styles';
 
@@ -24,9 +27,19 @@ const SignIn = () => {
     setState(newState);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    setState(initialState);
+
+    const { email, password } = state;
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+
+      // Clear the form
+      setState(initialState);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

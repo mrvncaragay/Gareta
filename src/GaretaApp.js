@@ -15,6 +15,7 @@ const GaretaApp = () => {
 
   /* eslint-disable */
   useEffect(() => {
+    // Listed to Auth changed
     const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         // Create user or return user data if is already exists
@@ -28,8 +29,6 @@ const GaretaApp = () => {
           });
         });
 
-        console.log(currentUser)
-
       }else {
         // userAuth is null when returned
         setCurrentUser(userAuth);
@@ -41,7 +40,7 @@ const GaretaApp = () => {
     };
   }, []);
   /* eslint-enable */
-  console.log(currentUser);
+
   return (
     <div>
       <Navbar currentUser={currentUser} />
