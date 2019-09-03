@@ -2,13 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assests/logo.svg';
 
+// Auth
+import { auth } from '../../firebase/util';
+
 // Material UI component
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 // Component styles
 import styles from './styles';
 
-const Navbar = () => {
+const Navbar = ({ currentUser }) => {
   const classes = styles();
 
   return (
@@ -25,6 +29,20 @@ const Navbar = () => {
         <Link to='/' className={classes.option}>
           <Typography variant='h5'> CONTACT</Typography>
         </Link>
+
+        {currentUser ? (
+          <Button
+            size='small'
+            className={classes.margin}
+            onClick={() => auth.signOut()}
+          >
+            <Typography variant='h5'>Sign out</Typography>
+          </Button>
+        ) : (
+          <Link to='/signin' className={classes.option}>
+            <Typography variant='h5'>Sign in</Typography>
+          </Link>
+        )}
       </div>
     </div>
   );

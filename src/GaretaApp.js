@@ -21,11 +21,11 @@ const GaretaApp = () => {
     return () => {
       unsubscribeFromAuth();
     };
-  }, []);
+  }, [currentUser]);
 
   return (
     <div>
-      <Navbar />
+      <Navbar currentUser={currentUser} />
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/shop' component={ShopPage} />

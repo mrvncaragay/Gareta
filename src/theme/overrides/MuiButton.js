@@ -21,6 +21,8 @@ export default {
 
   contained: {
     letterSpacing: '0.1em',
-    padding: '10px 32px 10px 32px'
+    padding: '10px 32px 10px 32px',
+    boxShadow: 'none',
+    backgroundColor: '#4285F4 !important'
   }
 };
