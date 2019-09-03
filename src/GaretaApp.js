@@ -8,21 +8,39 @@ import SignInUp from './views/SignInUp';
 import { Navbar } from './components';
 
 // Auth
-import { auth } from './firebase/util';
+import { auth, createUserProfileDocument } from './firebase/util';
 
 const GaretaApp = () => {
   const [currentUser, setCurrentUser] = useState();
 
+  /* eslint-disable */
   useEffect(() => {
-    const unsubscribeFromAuth = auth.onAuthStateChanged(user =>
-      setCurrentUser(user)
-    );
+    const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        // Create user or return user data if is already exists
+        const userRef = await createUserProfileDocument(userAuth);
+
+        // Store returned data
+        userRef.onSnapshot(snapShot => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data()
+          });
+        });
+
+      }else {
+        // userAuth is null when returned
+        setCurrentUser(userAuth);
+      }
+    });
 
     return () => {
       unsubscribeFromAuth();
     };
-  }, [currentUser]);
+  }, []);
+  /* eslint-enable */
 
+  console.log(currentUser);
   return (
     <div>
       <Navbar currentUser={currentUser} />
