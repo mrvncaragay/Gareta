@@ -2,8 +2,9 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 // Shared component
-import HomePage from './Views/HomePage';
-import ShopPage from './Views/ShopPage';
+import HomePage from './views/HomePage';
+import ShopPage from './views/ShopPage';
+import SignInUp from './views/SignInUp';
 import { Navbar } from './Components';
 
 const GaretaApp = () => {
@@ -13,6 +14,7 @@ const GaretaApp = () => {
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/shop' component={ShopPage} />
+        <Route exact path='/signin' component={SignInUp} />
       </Switch>
     </div>
   );

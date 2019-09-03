@@ -5,13 +5,13 @@ export default makeStyles(theme => ({
     height: theme.spacing(9),
     display: 'flex',
     justifyContent: 'space-between',
-    padding: theme.spacing(3, 3)
+    padding: theme.spacing(6, 6)
   },
 
   logo: {
     height: '100%',
     width: '50px',
-    padding: theme.spacing(0, 3, 3, 3)
+    padding: theme.spacing(0, 3, 3, 0)
   },
 
   options: {
@@ -19,11 +19,14 @@ export default makeStyles(theme => ({
     height: '100%',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'flex-end',
-    paddingRight: theme.spacing(4)
+    justifyContent: 'flex-end'
   },
 
   option: {
-    padding: theme.spacing(1, 2)
+    padding: theme.spacing(1, 2),
+
+    '&:last-child': {
+      paddingRight: 0
+    }
   }
 }));

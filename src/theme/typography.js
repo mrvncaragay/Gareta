@@ -14,9 +14,9 @@ export default {
 
   h2: {
     color: palette.text.primary,
-    fontWeight: '300',
+    fontWeight: '400',
     fontSize: '29px',
-    letterSpacing: '-1.5px',
+    letterSpacing: '-0.5px',
     lineHeight: '32px',
     textTransform: 'uppercase'
   },
@@ -35,9 +35,8 @@ export default {
     color: palette.text.primary,
     fontWeight: '600',
     fontSize: '20px',
-    letterSpacing: '-0.06px',
-    lineHeight: '24px',
-    textTransform: 'uppercase'
+    letterSpacing: '-0.5px',
+    lineHeight: '24px'
   },
   h5: {
     color: palette.text.primary,
