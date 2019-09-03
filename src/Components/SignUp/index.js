@@ -42,8 +42,7 @@ const SignUp = () => {
         <TextField
           fullWidth={true}
           label='Display Name'
-          name='email'
-          type='email'
+          name='name'
           required
           value={state.name}
           onChange={handleChange}
@@ -67,16 +66,18 @@ const SignUp = () => {
           required
           label='Password'
           margin='normal'
+          onChange={handleChange}
         />
 
         <TextField
           className={classes.password}
           fullWidth={true}
-          name='password'
+          name='confirmPassword'
           value={state.confirmPassword}
           required
           label='Confirm Password'
           margin='normal'
+          onChange={handleChange}
         />
 
         <Button variant='outlined' type='submit'>

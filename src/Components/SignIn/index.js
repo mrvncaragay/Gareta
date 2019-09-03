@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { signInWithGoogle } from '../../firebase/util';
 //Material UI component
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -50,18 +50,19 @@ const SignIn = () => {
         <TextField
           className={classes.password}
           fullWidth={true}
+          label='Password'
           name='password'
           value={state.password}
           required
-          label='Password'
           margin='normal'
+          onChange={handleChange}
         />
 
         <Button variant='outlined' type='submit'>
           Sign in
         </Button>
 
-        <Button color='primary' variant='contained' type='submit'>
+        <Button onClick={signInWithGoogle} color='primary' variant='contained'>
           Sign in with google
         </Button>
       </form>

@@ -10,7 +10,7 @@ export default {
   outlined: {
     backgroundColor: palette.text.primary,
     letterSpacing: '0.15em',
-    padding: '10px 24px 10px 24px',
+    padding: '10px 32px 10px 32px',
     color: 'white',
 
     '&:hover': {
@@ -21,10 +21,6 @@ export default {
 
   contained: {
     letterSpacing: '0.1em',
-    padding: '10px 24px 10px 24px'
-  },
-
-  label: {
-    fontSize: '16px'
+    padding: '10px 32px 10px 32px'
   }
 };

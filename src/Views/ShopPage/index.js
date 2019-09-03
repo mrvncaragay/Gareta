@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import shopData from '../../TestData/shop-data';
 
 // Shared Component
-import { CollectionsPreview } from '../../Components';
+import { CollectionsPreview } from '../../components';
 
 // Component styles
 import styles from './styles';

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Shared Component
-import { Directory } from '../../Components';
+import { Directory } from '../../components';
 
 // Component styles
 import styles from './styles';
