@@ -22,7 +22,7 @@ const Navbar = ({ currentUser }) => {
       </Link>
 
       <div className={classes.options}>
-        <Link to='/' className={classes.option}>
+        <Link to='/shop' className={classes.option}>
           <Typography variant='h5'> SHOP</Typography>
         </Link>
 

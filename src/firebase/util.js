@@ -2,14 +2,17 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
+// Keys
+import api from '../config';
+
 const config = {
-  apiKey: 'AIzaSyA-BtdmnR4xO72ESxdrcNW9f1f1URSA2wQ',
-  authDomain: 'gareta-ace47.firebaseapp.com',
-  databaseURL: 'https://gareta-ace47.firebaseio.com',
-  projectId: 'gareta-ace47',
-  storageBucket: '',
-  messagingSenderId: '853378040674',
-  appId: '1:853378040674:web:aa460a5b2ca063db'
+  apiKey: api.REACT_APP_APIKEY,
+  authDomain: api.REACT_APP_authDomain,
+  databaseURL: api.REACT_APP_databaseURL,
+  projectId: api.REACT_APP_projectId,
+  storageBucket: api.REACT_APP_storageBucket,
+  messagingSenderId: api.REACT_APP_messagingSenderId,
+  appId: api.REACT_APP_appId
 };
 
 firebase.initializeApp(config);
