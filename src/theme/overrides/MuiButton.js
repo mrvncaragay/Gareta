@@ -2,16 +2,29 @@
 import palette from '../palette';
 
 export default {
+  root: {
+    borderRadius: 'none',
+    marginRight: '16px'
+  },
+
   outlined: {
-    backgroundColor: palette.common.white,
-    color: palette.common.muted
+    backgroundColor: palette.text.primary,
+    letterSpacing: '0.15em',
+    padding: '10px 24px 10px 24px',
+    color: 'white',
+
+    '&:hover': {
+      backgroundColor: 'white',
+      color: palette.text.primary
+    }
   },
+
   contained: {
-    backgroundColor: palette.common.white,
-    '&:hover': {}
+    letterSpacing: '0.1em',
+    padding: '10px 24px 10px 24px'
   },
+
   label: {
-    height: '14px',
-    fontSize: '10px'
+    fontSize: '16px'
   }
 };

@@ -8,11 +8,13 @@ import Button from '@material-ui/core/Button';
 // Component styles
 import styles from './styles';
 
-const SignIn = () => {
+const SignUp = () => {
   const classes = styles();
   const initialState = {
+    name: '',
     email: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   };
   const [state, setState] = useState(initialState);
 
@@ -31,12 +33,22 @@ const SignIn = () => {
 
   return (
     <div className={classes.root}>
-      <Typography variant='h4'>I already have an account</Typography>
+      <Typography variant='h4'>I don't have an account</Typography>
       <Typography component='span' variant='subtitle2'>
-        Sign in with your email and password
+        Sign up with your email and password
       </Typography>
 
       <form onSubmit={handleSubmit} className={classes.form}>
+        <TextField
+          fullWidth={true}
+          label='Display Name'
+          name='email'
+          type='email'
+          required
+          value={state.name}
+          onChange={handleChange}
+        />
+
         <TextField
           fullWidth={true}
           label='Email'
@@ -57,16 +69,22 @@ const SignIn = () => {
           margin='normal'
         />
 
-        <Button variant='outlined' type='submit'>
-          Sign in
-        </Button>
+        <TextField
+          className={classes.password}
+          fullWidth={true}
+          name='password'
+          value={state.confirmPassword}
+          required
+          label='Confirm Password'
+          margin='normal'
+        />
 
-        <Button color='primary' variant='contained' type='submit'>
-          Sign in with google
+        <Button variant='outlined' type='submit'>
+          Sign Up
         </Button>
       </form>
     </div>
   );
 };
 
-export default SignIn;
+export default SignUp;

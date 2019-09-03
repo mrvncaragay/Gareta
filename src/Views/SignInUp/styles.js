@@ -2,6 +2,8 @@ import { makeStyles } from '@material-ui/styles';
 
 export default makeStyles(theme => ({
   root: {
-    padding: theme.spacing(6)
+    display: 'flex',
+    justifyContent: 'center',
+    padding: theme.spacing(0, 6, 6, 6)
   }
 }));

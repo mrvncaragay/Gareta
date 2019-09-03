@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Shared component
-import { SignIn } from '../../Components';
+import { SignIn, SignUp } from '../../Components';
 
 // Component styles
 import styles from './styles';
@@ -12,6 +12,7 @@ const SignInUp = () => {
   return (
     <div className={classes.root}>
       <SignIn />
+      <SignUp />
     </div>
   );
 };
