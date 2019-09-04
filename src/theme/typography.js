@@ -5,7 +5,7 @@ export default {
 
   h1: {
     color: palette.text.primary,
-    fontWeight: '300',
+    fontWeight: '400',
     fontSize: '35px',
     letterSpacing: '-1.5px',
     lineHeight: '40px',
@@ -17,8 +17,7 @@ export default {
     fontWeight: '400',
     fontSize: '29px',
     letterSpacing: '-0.5px',
-    lineHeight: '32px',
-    textTransform: 'uppercase'
+    lineHeight: '32px'
   },
 
   h3: {

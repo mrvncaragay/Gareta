@@ -2,11 +2,12 @@ import React from 'react';
 
 // Material UI component
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 // Component styles
 import styles from './styles';
 
-const CollectionsItem = ({ id, name, price, imageUrl }) => {
+const CollectionsItem = ({ name, price, imageUrl }) => {
   const classes = styles();
 
   return (
@@ -26,6 +27,10 @@ const CollectionsItem = ({ id, name, price, imageUrl }) => {
           ${price}
         </Typography>
       </div>
+
+      <Button size='small' className={classes.button} variant='outlined'>
+        Add to cart
+      </Button>
     </div>
   );
 };
