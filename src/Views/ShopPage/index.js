@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { selectShopData } from '../../redux/shop/selectors';
 
-// Dummy data
-import shopData from '../../TestData/shop-data';
+// External
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 // Shared Component
 import { CollectionsPreview } from '../../components';
@@ -12,9 +14,8 @@ import Typography from '@material-ui/core/Typography';
 // Component styles
 import styles from './styles';
 
-const ShopPage = () => {
+const ShopPage = ({ shopData }) => {
   const classes = styles();
-  const [state] = useState(shopData);
 
   return (
     <div className={classes.root}>
@@ -25,11 +26,15 @@ const ShopPage = () => {
       >
         Collections
       </Typography>
-      {state.map(({ id, title, ...rest }) => (
+      {shopData.map(({ id, title, ...rest }) => (
         <CollectionsPreview key={id} title={title} {...rest} />
       ))}
     </div>
   );
 };
 
-export default ShopPage;
+const mapStateToProps = createStructuredSelector({
+  shopData: selectShopData
+});
+
+export default connect(mapStateToProps)(ShopPage);
