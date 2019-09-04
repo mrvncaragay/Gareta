@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 // Redux
 import { connect } from 'react-redux';
@@ -14,7 +14,7 @@ import { Navbar } from './components';
 // Auth
 import { auth, createUserProfileDocument } from './firebase/util';
 
-const GaretaApp = ({ setCurrentUser }) => {
+const GaretaApp = ({ currentUser, setCurrentUser }) => {
   /* eslint-disable */
   useEffect(() => {
     // Listed to Auth changed
@@ -48,17 +48,25 @@ const GaretaApp = ({ setCurrentUser }) => {
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/shop' component={ShopPage} />
-        <Route exact path='/signin' component={SignInUp} />
+        <Route
+          exact
+          path='/signin'
+          render={() => (currentUser ? <Redirect to='/' /> : <SignInUp />)}
+        />
       </Switch>
     </div>
   );
 };
+
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+});
 
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(GaretaApp);
