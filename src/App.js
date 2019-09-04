@@ -1,6 +1,10 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
+// Externals
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
 // Main app component
 import GaretaApp from './GaretaApp';
 
@@ -12,7 +16,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <GaretaApp />
+        <Provider store={store}>
+          <GaretaApp />
+        </Provider>
       </BrowserRouter>
     </ThemeProvider>
   );

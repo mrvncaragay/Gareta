@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 // Auth
-import { auth, createUserProfileDocument } from '../../firebase/util';
+import { auth } from '../../firebase/util';
 
 // Component styles
 import styles from './styles';
