@@ -5,11 +5,7 @@ export default makeStyles(theme => ({
     width: '100%',
     display: 'flex',
     height: '80px',
-    marginBottom: '15px',
-
-    '& img': {
-      width: '30%'
-    }
+    marginBottom: '15px'
   },
 
   itemDetails: {
@@ -19,5 +15,9 @@ export default makeStyles(theme => ({
     alignItems: 'flex-start',
     justifyContent: 'center',
     paddingLeft: theme.spacing(2)
+  },
+
+  cover: {
+    width: '30%'
   }
 }));

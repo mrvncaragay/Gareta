@@ -2,6 +2,7 @@ import React from 'react';
 
 // External
 import { connect } from 'react-redux';
+import { selectCartItems } from '../../redux/cart/selectors';
 
 // Shared component
 import CartItem from '../CartItem';
@@ -27,8 +28,8 @@ const CartDropDown = ({ cartItems }) => {
   );
 };
 
-const mapToStateProps = ({ cart: { cartItems } }) => ({
-  cartItems
+const mapToStateProps = state => ({
+  cartItems: selectCartItems(state)
 });
 
 export default connect(

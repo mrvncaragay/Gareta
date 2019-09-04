@@ -2,6 +2,7 @@ import React from 'react';
 
 // Material UI component
 import Typography from '@material-ui/core/Typography';
+import CardMedia from '@material-ui/core/CardMedia';
 
 // Component styles
 import styles from './styles';
@@ -11,7 +12,7 @@ const CartItem = ({ item: { imageUrl, price, name, quantity } }) => {
 
   return (
     <div className={classes.root}>
-      <img src={imageUrl} alt='item' />
+      <CardMedia className={classes.cover} image={imageUrl} title={name} />
       <div className={classes.itemDetails}>
         <Typography component='span' variant='subtitle2'>
           {name}
