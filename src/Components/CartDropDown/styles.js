@@ -21,9 +21,8 @@ export default makeStyles(theme => ({
   },
 
   cartItems: {
-    height: '240px',
     display: 'flex',
     flexDirection: 'column',
-    overflow: 'scroll'
+    overflow: 'auto'
   }
 }));
