@@ -12,6 +12,9 @@ import { auth } from '../../firebase/util';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
+// Shared component
+import CartIcon from '../CartIcon';
+
 // Component styles
 import styles from './styles';
 
@@ -46,6 +49,8 @@ const Navbar = ({ currentUser }) => {
             <Typography variant='h5'>Sign in</Typography>
           </Link>
         )}
+
+        <CartIcon />
       </div>
     </div>
   );
