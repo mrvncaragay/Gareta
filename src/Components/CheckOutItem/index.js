@@ -1,5 +1,9 @@
 import React from 'react';
-import { clearItemFromCart } from '../../redux/cart/cartActions';
+import {
+  clearItemFromCart,
+  addItem,
+  removeItem
+} from '../../redux/cart/cartActions';
 
 // External
 import { connect } from 'react-redux';
@@ -11,7 +15,7 @@ import Typography from '@material-ui/core/Typography';
 // Component styles
 import styles from './styles';
 
-const CheckOutItem = ({ cartItem, clearItem }) => {
+const CheckOutItem = ({ cartItem, clearItem, removeItem, addItem }) => {
   const classes = styles();
   const { name, imageUrl, price, quantity } = cartItem;
 
@@ -21,9 +25,28 @@ const CheckOutItem = ({ cartItem, clearItem }) => {
       <Typography component='span' variant='subtitle2'>
         {name}
       </Typography>
-      <Typography component='span' variant='subtitle2'>
-        {quantity}
+
+      <Typography
+        className={classes.quantity}
+        component='span'
+        variant='subtitle2'
+      >
+        <div className={classes.arrow} onClick={() => removeItem(cartItem)}>
+          &#10094;
+        </div>
+
+        <Typography
+          className={classes.value}
+          component='span'
+          variant='subtitle2'
+        >
+          {quantity}
+        </Typography>
+        <div className={classes.arrow} onClick={() => addItem(cartItem)}>
+          &#10095;
+        </div>
       </Typography>
+
       <Typography component='span' variant='subtitle2'>
         {price}
       </Typography>
@@ -35,7 +58,9 @@ const CheckOutItem = ({ cartItem, clearItem }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  clearItem: item => dispatch(clearItemFromCart(item))
+  clearItem: item => dispatch(clearItemFromCart(item)),
+  addItem: item => dispatch(addItem(item)),
+  removeItem: item => dispatch(removeItem(item))
 });
 
 export default connect(

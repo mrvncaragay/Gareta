@@ -23,5 +23,18 @@ export default makeStyles(theme => ({
   removeBtn: {
     paddingLeft: '12px',
     cursor: 'pointer'
+  },
+
+  quantity: {
+    display: 'flex'
+  },
+
+  arrow: {
+    cursor: 'pointer',
+    fontWeight: 'bold'
+  },
+
+  value: {
+    textAlign: 'center'
   }
 }));
