@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-// Redux
+// External
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { setCurrentUser } from './redux/user/userActions';
+import { selectCurrentUser } from './redux/user/selectors';
 
 // Shared component
 import HomePage from './views/HomePage';
@@ -58,8 +60,8 @@ const GaretaApp = ({ currentUser, setCurrentUser }) => {
   );
 };
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 });
 
 const mapDispatchToProps = dispatch => ({
