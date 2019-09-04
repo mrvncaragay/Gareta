@@ -14,11 +14,12 @@ import Button from '@material-ui/core/Button';
 
 // Shared component
 import CartIcon from '../CartIcon';
+import CartDropDown from '../CartDropDown';
 
 // Component styles
 import styles from './styles';
 
-const Navbar = ({ currentUser }) => {
+const Navbar = ({ currentUser, cart }) => {
   const classes = styles();
 
   return (
@@ -52,12 +53,14 @@ const Navbar = ({ currentUser }) => {
 
         <CartIcon />
       </div>
+      {!cart.hidden && <CartDropDown />}
     </div>
   );
 };
 
-const mapStateToProps = state => ({
-  currentUser: state.user.currentUser
+const mapStateToProps = ({ user, cart }) => ({
+  currentUser: user.currentUser,
+  cart: cart
 });
 
 export default connect(mapStateToProps)(Navbar);
