@@ -18,8 +18,8 @@ const CollectionsPreview = ({ title, items }) => {
         {title}
       </Typography>
       <div className={classes.preview}>
-        {items.slice(0, 4).map(({ id, ...rest }) => (
-          <CollectionsItem key={id} {...rest} />
+        {items.slice(0, 4).map(item => (
+          <CollectionsItem key={item.id} item={item} />
         ))}
       </div>
     </div>
