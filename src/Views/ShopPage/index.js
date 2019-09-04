@@ -1,20 +1,15 @@
 import React from 'react';
-import { selectShopData } from '../../redux/shop/selectors';
-
-// External
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-
-// Shared Component
-import { CollectionsPreview } from '../../components';
 
 // Material UI component
 import Typography from '@material-ui/core/Typography';
 
+// Shared components
+import { CollectionsOverview } from '../../components';
+
 // Component styles
 import styles from './styles';
 
-const ShopPage = ({ shopData }) => {
+const ShopPage = ({ collections }) => {
   const classes = styles();
 
   return (
@@ -26,15 +21,10 @@ const ShopPage = ({ shopData }) => {
       >
         Collections
       </Typography>
-      {shopData.map(({ id, title, ...rest }) => (
-        <CollectionsPreview key={id} title={title} {...rest} />
-      ))}
+
+      <CollectionsOverview />
     </div>
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  shopData: selectShopData
-});
-
-export default connect(mapStateToProps)(ShopPage);
+export default ShopPage;
