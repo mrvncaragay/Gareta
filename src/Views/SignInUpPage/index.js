@@ -6,7 +6,7 @@ import { SignIn, SignUp } from '../../components';
 // Component styles
 import styles from './styles';
 
-const SignInUp = () => {
+const SignInUpPage = () => {
   const classes = styles();
 
   return (
@@ -17,4 +17,4 @@ const SignInUp = () => {
   );
 };
 
-export default SignInUp;
+export default SignInUpPage;

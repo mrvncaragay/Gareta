@@ -14,15 +14,22 @@ export default makeStyles(theme => ({
     right: '40px',
     zIndex: '5',
 
-    '& button': {
+    '& a, & button ': {
+      width: '100%',
       marginTop: 'auto',
       marginRight: 0
     }
   },
 
+  empty: {
+    overflow: 'hidden',
+    marginTop: '20%',
+    alignSelf: 'center'
+  },
+
   cartItems: {
     display: 'flex',
     flexDirection: 'column',
-    overflow: 'auto'
+    overflowY: 'auto'
   }
 }));

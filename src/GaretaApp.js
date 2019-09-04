@@ -10,7 +10,8 @@ import { selectCurrentUser } from './redux/user/selectors';
 // Shared component
 import HomePage from './views/HomePage';
 import ShopPage from './views/ShopPage';
-import SignInUp from './views/SignInUp';
+import SignInUpPage from './views/SignInUpPage';
+import CheckOutPage from './views/CheckOutPage';
 import { Navbar } from './components';
 
 // Auth
@@ -50,10 +51,11 @@ const GaretaApp = ({ currentUser, setCurrentUser }) => {
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/shop' component={ShopPage} />
+        <Route exact path='/checkout' component={CheckOutPage} />
         <Route
           exact
           path='/signin'
-          render={() => (currentUser ? <Redirect to='/' /> : <SignInUp />)}
+          render={() => (currentUser ? <Redirect to='/' /> : <SignInUpPage />)}
         />
       </Switch>
     </div>
