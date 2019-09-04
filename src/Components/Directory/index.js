@@ -1,7 +1,9 @@
 import React from 'react';
+import { selectDirectorySections } from '../../redux/directory/selectors';
 
-// Dummy data
-import sections from '../../TestData/sections-data';
+// External
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 // Shared component
 import MenuItem from '../MenuItem';
@@ -9,7 +11,7 @@ import MenuItem from '../MenuItem';
 // Component styles
 import styles from './styles';
 
-const Directory = () => {
+const Directory = ({ sections }) => {
   const classes = styles();
 
   return (
@@ -21,4 +23,8 @@ const Directory = () => {
   );
 };
 
-export default Directory;
+const mapStateToProps = createStructuredSelector({
+  sections: selectDirectorySections
+});
+
+export default connect(mapStateToProps)(Directory);
