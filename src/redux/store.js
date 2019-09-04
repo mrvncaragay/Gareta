@@ -1,11 +1,20 @@
 import { applyMiddleware, createStore, compose } from 'redux';
-import logger from 'redux-logger';
 import rootReducer from './rootReducer';
+import { persistStore, persistReducer } from 'redux-persist';
 
-const middlewares = [logger];
+// Use Local Storage as default
+import storage from 'redux-persist/lib/storage';
 
-const store = createStore(
-  rootReducer,
+const persistConfig = {
+  key: 'root',
+  storage
+};
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const middlewares = [];
+
+export const store = createStore(
+  persistedReducer,
   compose(
     applyMiddleware(...middlewares),
     ...(window.__REDUX_DEVTOOLS_EXTENSION__
@@ -14,4 +23,4 @@ const store = createStore(
   )
 );
 
-export default store;
+export const persistor = persistStore(store);

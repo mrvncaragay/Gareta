@@ -3,7 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 // Externals
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import { store, persistor } from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 // Main app component
 import GaretaApp from './GaretaApp';
@@ -17,7 +18,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Provider store={store}>
-          <GaretaApp />
+          <PersistGate loading={null} persistor={persistor}>
+            <GaretaApp />
+          </PersistGate>
         </Provider>
       </BrowserRouter>
     </ThemeProvider>
