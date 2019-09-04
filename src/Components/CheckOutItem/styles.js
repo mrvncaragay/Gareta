@@ -16,7 +16,7 @@ export default makeStyles(theme => ({
 
   img: {
     width: '20%',
-    marginRight: theme.spacing(3),
+    marginRight: theme.spacing(2.5),
     height: '130px'
   },
 
