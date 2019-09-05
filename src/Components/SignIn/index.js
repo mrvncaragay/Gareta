@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import { signInWithGoogle } from '../../firebase/util';
+import { googleSignInStart } from '../../redux/user/userActions';
+
+// External
+import { connect } from 'react-redux';
+
 //Material UI component
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -11,7 +16,7 @@ import { auth } from '../../firebase/util';
 // Component styles
 import styles from './styles';
 
-const SignIn = () => {
+const SignIn = ({ googleSignInStart }) => {
   const classes = styles();
   const initialState = {
     email: '',
@@ -76,7 +81,7 @@ const SignIn = () => {
           Sign in
         </Button>
 
-        <Button onClick={signInWithGoogle} color='primary' variant='contained'>
+        <Button onClick={googleSignInStart} color='primary' variant='contained'>
           Sign in with google
         </Button>
       </form>
@@ -84,4 +89,7 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default connect(
+  null,
+  { googleSignInStart }
+)(SignIn);

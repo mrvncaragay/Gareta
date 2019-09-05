@@ -20,28 +20,28 @@ import { auth, createUserProfileDocument } from './firebase/util';
 const GaretaApp = ({ currentUser, setCurrentUser }) => {
   /* eslint-disable */
   useEffect(() => {
-    // Listed to Auth changed
-    const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      if (userAuth) {
-        // Create user or return user data if is already exists
-        const userRef = await createUserProfileDocument(userAuth);
+    // // Listed to Auth changed
+    // const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+    //   if (userAuth) {
+    //     // Create user or return user data if is already exists
+    //     const userRef = await createUserProfileDocument(userAuth);
 
-        // Store returned data
-        userRef.onSnapshot(snapShot => {
-          setCurrentUser({
-            id: snapShot.id,
-            ...snapShot.data()
-          });
-        });
-      } else {
-        // userAuth is null when returned
-        setCurrentUser(userAuth);
-      }
-    });
+    //     // Store returned data
+    //     userRef.onSnapshot(snapShot => {
+    //       setCurrentUser({
+    //         id: snapShot.id,
+    //         ...snapShot.data()
+    //       });
+    //     });
+    //   } else {
+    //     // userAuth is null when returned
+    //     setCurrentUser(userAuth);
+    //   }
+    // });
 
-    return () => {
-      unsubscribeFromAuth();
-    };
+    // return () => {
+    //   unsubscribeFromAuth();
+    // };
   }, []);
   /* eslint-enable */
 
