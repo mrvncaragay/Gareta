@@ -1,15 +1,17 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 
 // Material UI component
 import Typography from '@material-ui/core/Typography';
 
 // Shared components
 import { CollectionsOverview } from '../../components';
+import CollectionPage from '../CollectionPage';
 
 // Component styles
 import styles from './styles';
 
-const ShopPage = ({ collections }) => {
+const ShopPage = ({ match }) => {
   const classes = styles();
 
   return (
@@ -22,7 +24,12 @@ const ShopPage = ({ collections }) => {
         Collections
       </Typography>
 
-      <CollectionsOverview />
+      <Route exact path={`${match.path}`} component={CollectionsOverview} />
+      <Route
+        exact
+        path={`${match.path}/:collectionId`}
+        component={CollectionPage}
+      />
     </div>
   );
 };

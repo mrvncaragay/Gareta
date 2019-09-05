@@ -2,12 +2,13 @@ import { makeStyles } from '@material-ui/styles';
 
 export default makeStyles(theme => ({
   root: {
-    width: '22%',
+    width: '22vw',
     display: 'flex',
     flexDirection: 'column',
     height: '350px',
     alignItems: 'center',
     position: 'relative',
+    marginBottom: theme.spacing(4),
 
     '&:hover $button': {
       display: 'flex'
