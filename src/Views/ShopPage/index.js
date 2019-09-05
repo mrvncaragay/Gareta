@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
-import { fetchCollectionsStartAsync } from '../../redux/shop/shopActions';
+import { fetchCollectionsStart } from '../../redux/shop/shopActions';
 
 // External
 import { connect } from 'react-redux';
@@ -15,12 +15,12 @@ import CollectionsPageContainer from '../CollectionPage/container';
 // Component styles
 import styles from './styles';
 
-const ShopPage = ({ match, fetchCollectionsStartAsync }) => {
+const ShopPage = ({ match, fetchCollectionsStart }) => {
   const classes = styles();
 
   /* eslint-disable */
   useEffect(() => {
-    fetchCollectionsStartAsync()
+    fetchCollectionsStart()
 
     // Clean up
     return () => {}
@@ -48,5 +48,5 @@ const ShopPage = ({ match, fetchCollectionsStartAsync }) => {
 
 export default connect(
   null,
-  { fetchCollectionsStartAsync }
+  { fetchCollectionsStart }
 )(ShopPage);
