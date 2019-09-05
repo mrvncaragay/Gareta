@@ -13,6 +13,7 @@ import ShopPage from './views/ShopPage';
 import SignInUpPage from './views/SignInUpPage';
 import CheckOutPage from './views/CheckOutPage';
 import { Navbar } from './components';
+import CollectionPage from './views/CollectionPage';
 
 // Auth
 import { auth, createUserProfileDocument } from './firebase/util';
@@ -50,7 +51,8 @@ const GaretaApp = ({ currentUser, setCurrentUser }) => {
       <Navbar />
       <Switch>
         <Route exact path='/' component={HomePage} />
-        <Route path='/shop' component={ShopPage} />
+        <Route exact path='/shop' component={ShopPage} />
+        <Route exact path='/shop/:collectionId' component={CollectionPage} />
         <Route exact path='/checkout' component={CheckOutPage} />
         <Route
           exact

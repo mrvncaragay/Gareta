@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography';
 
 // Shared components
 import { CollectionsOverview } from '../../components';
-import CollectionPage from '../CollectionPage';
 
 // Component styles
 import styles from './styles';
@@ -24,12 +23,7 @@ const ShopPage = ({ match }) => {
         Collections
       </Typography>
 
-      <Route exact path={`${match.path}`} component={CollectionsOverview} />
-      <Route
-        exact
-        path={`${match.path}/:collectionId`}
-        component={CollectionPage}
-      />
+      <CollectionsOverview />
     </div>
   );
 };
