@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 
 // Material UI component
 import Typography from '@material-ui/core/Typography';
