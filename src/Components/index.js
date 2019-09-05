@@ -6,3 +6,4 @@ export { default as SignUp } from './SignUp';
 export { default as CheckOutItem } from './CheckOutItem';
 export { default as CollectionsOverview } from './CollectionsOverview';
 export { default as CollectionsItem } from './CollectionsItem';
+export { default as Spinners } from './Spinners';

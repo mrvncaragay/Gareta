@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 // Component styles
 import styles from './styles';
 
-const CollectionPage = ({ collection }) => {
+const CollectionPage = ({ match, collection }) => {
   const classes = styles();
 
   const { title, items } = collection;

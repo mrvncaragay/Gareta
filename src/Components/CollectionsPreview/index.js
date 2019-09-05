@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Material UI component
 import Typography from '@material-ui/core/Typography';
@@ -14,9 +15,11 @@ const CollectionsPreview = ({ title, items }) => {
 
   return (
     <div className={classes.root}>
-      <Typography className={classes.title} variant='h2'>
-        {title}
-      </Typography>
+      <Link to={`/shop/${title.toLowerCase()}`}>
+        <Typography className={classes.title} variant='h2'>
+          {title}
+        </Typography>
+      </Link>
       <div className={classes.preview}>
         {items.slice(0, 4).map(item => (
           <CollectionsItem key={item.id} item={item} />

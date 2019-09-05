@@ -5,7 +5,7 @@ export default makeStyles(theme => ({
     height: theme.spacing(9),
     display: 'flex',
     justifyContent: 'space-between',
-    padding: theme.spacing(6, 6)
+    padding: theme.spacing(6, 6, 2, 6)
   },
 
   logo: {

@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { setCurrentUser } from './redux/user/userActions';
+import { selectCurrentUser } from './redux/user/selectors';
 
 // External
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { setCurrentUser } from './redux/user/userActions';
-import { selectCurrentUser } from './redux/user/selectors';
 
 // Shared component
 import HomePage from './views/HomePage';
@@ -13,7 +13,6 @@ import ShopPage from './views/ShopPage';
 import SignInUpPage from './views/SignInUpPage';
 import CheckOutPage from './views/CheckOutPage';
 import { Navbar } from './components';
-import CollectionPage from './views/CollectionPage';
 
 // Auth
 import { auth, createUserProfileDocument } from './firebase/util';
@@ -35,8 +34,8 @@ const GaretaApp = ({ currentUser, setCurrentUser }) => {
           });
         });
       } else {
-          // userAuth is null when returned
-          setCurrentUser(userAuth);
+        // userAuth is null when returned
+        setCurrentUser(userAuth);
       }
     });
 
@@ -51,8 +50,7 @@ const GaretaApp = ({ currentUser, setCurrentUser }) => {
       <Navbar />
       <Switch>
         <Route exact path='/' component={HomePage} />
-        <Route exact path='/shop' component={ShopPage} />
-        <Route exact path='/shop/:collectionId' component={CollectionPage} />
+        <Route path='/shop' component={ShopPage} />
         <Route exact path='/checkout' component={CheckOutPage} />
         <Route
           exact
