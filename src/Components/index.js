@@ -9,3 +9,4 @@ export {
 } from './CollectionsOverview/container';
 export { default as CollectionsItem } from './CollectionsItem';
 export { default as Spinners } from './Spinners';
+export { default as ErrorBoundary } from './ErrorBoundary';

@@ -1,21 +1,10 @@
 import React from 'react';
 
-// Material UI component
-import CircularProgress from '@material-ui/core/CircularProgress';
-
-// Component styles
-import styles from './styles';
+// Shared component
+import Spinner from './Spinner';
 
 const Spinners = WrappedComponent => ({ isLoading, ...otherProps }) => {
-  const classes = styles();
-
-  return isLoading ? (
-    <div className={classes.root}>
-      <CircularProgress />
-    </div>
-  ) : (
-    <WrappedComponent {...otherProps} />
-  );
+  return isLoading ? <Spinner /> : <WrappedComponent {...otherProps} />;
 };
 
 export default Spinners;
