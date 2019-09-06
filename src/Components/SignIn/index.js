@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { signInWithGoogle } from '../../firebase/util';
-import { googleSignInStart } from '../../redux/user/userActions';
+import {
+  googleSignInStart,
+  emailSignInStart
+} from '../../redux/user/userActions';
 
 // External
 import { connect } from 'react-redux';
@@ -10,13 +12,10 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-// Auth
-import { auth } from '../../firebase/util';
-
 // Component styles
 import styles from './styles';
 
-const SignIn = ({ googleSignInStart }) => {
+const SignIn = ({ googleSignInStart, emailSignInStart }) => {
   const classes = styles();
   const initialState = {
     email: '',
@@ -26,25 +25,13 @@ const SignIn = ({ googleSignInStart }) => {
 
   const handleChange = e => {
     const newState = { ...state };
-
     newState[e.target.name] = e.target.value;
-
     setState(newState);
   };
 
   const handleSubmit = async e => {
     e.preventDefault();
-
-    const { email, password } = state;
-
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-
-      // Clear the form
-      setState(initialState);
-    } catch (error) {
-      console.log(error);
-    }
+    emailSignInStart(state);
   };
 
   return (
@@ -91,5 +78,5 @@ const SignIn = ({ googleSignInStart }) => {
 
 export default connect(
   null,
-  { googleSignInStart }
+  { googleSignInStart, emailSignInStart }
 )(SignIn);

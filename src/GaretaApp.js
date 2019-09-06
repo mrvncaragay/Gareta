@@ -14,9 +14,6 @@ import SignInUpPage from './views/SignInUpPage';
 import CheckOutPage from './views/CheckOutPage';
 import { Navbar } from './components';
 
-// Auth
-import { auth, createUserProfileDocument } from './firebase/util';
-
 const GaretaApp = ({ currentUser, setCurrentUser }) => {
   /* eslint-disable */
   useEffect(() => {

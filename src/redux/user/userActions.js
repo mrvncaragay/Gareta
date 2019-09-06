@@ -19,13 +19,14 @@ export const googleSignInFailure = errorMessage => ({
   payload: errorMessage
 });
 
-export const emailSignInStart = () => ({
-  type: UserActionsTypes.EMAIL_SIGN_IN_START
+export const emailSignInStart = emailAndPassword => ({
+  type: UserActionsTypes.EMAIL_SIGN_IN_START,
+  payload: emailAndPassword
 });
 
-export const emailSignInSuccess = emailAndPassword => ({
+export const emailSignInSuccess = user => ({
   type: UserActionsTypes.EMAIL_SIGN_IN_SUCCESS,
-  paylaod: emailAndPassword
+  payload: user
 });
 
 export const emailSignInFailure = errorMessage => ({
