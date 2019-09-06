@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
+import { signUpStart } from '../../redux/user/userActions';
+
+// Ecternal
+import { connect } from 'react-redux';
 
 //Material UI component
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-// Auth
-import { auth, createUserProfileDocument } from '../../firebase/util';
-
 // Component styles
 import styles from './styles';
 
-const SignUp = () => {
+const SignUp = ({ signUpStart }) => {
   const classes = styles();
   const initialState = {
     displayName: '',
@@ -29,25 +30,14 @@ const SignUp = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const { displayName, email, password, confirmPassword } = state;
-    if (password !== confirmPassword) {
+    const { confirmPassword, ...rest } = state;
+    if (state.password !== confirmPassword) {
       alert("Password word don't match");
       return;
     }
 
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(
-        email,
-        password
-      );
-
-      await createUserProfileDocument(user, { displayName });
-
-      // Clear the form
-      setState(initialState);
-    } catch (error) {
-      console.error(error);
-    }
+    signUpStart(rest);
+    setState(initialState);
   };
 
   return (
@@ -109,4 +99,7 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default connect(
+  null,
+  { signUpStart }
+)(SignUp);
