@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 // Material UI component
 import Typography from '@material-ui/core/Typography';
@@ -25,4 +25,4 @@ const CartItem = ({ item: { imageUrl, price, name, quantity } }) => {
   );
 };
 
-export default CartItem;
+export default memo(CartItem);
