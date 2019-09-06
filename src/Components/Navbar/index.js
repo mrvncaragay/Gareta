@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
+import { signOutStart } from '../../redux/user/userActions';
 
 // External
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCartHidden } from '../../redux/cart/selectors';
 import { selectCurrentUser } from '../../redux/user/selectors';
-
-// Auth
-import { auth } from '../../firebase/util';
 
 // Material UI component
 import Typography from '@material-ui/core/Typography';
@@ -22,7 +20,7 @@ import CartDropDown from '../CartDropDown';
 // Component styles
 import styles from './styles';
 
-const Navbar = ({ currentUser, hidden }) => {
+const Navbar = ({ currentUser, hidden, signOutStart }) => {
   const classes = styles();
 
   return (
@@ -44,7 +42,7 @@ const Navbar = ({ currentUser, hidden }) => {
           <Button
             size='small'
             className={classes.margin}
-            onClick={() => auth.signOut()}
+            onClick={signOutStart}
           >
             <Typography variant='h5'>Sign out</Typography>
           </Button>
@@ -66,4 +64,7 @@ const mapStateToProps = createStructuredSelector({
   hidden: selectCartHidden
 });
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(
+  mapStateToProps,
+  { signOutStart }
+)(Navbar);

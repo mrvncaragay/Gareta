@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { selectCurrentUser } from './redux/user/selectors';
+import { checkUserSession } from './redux/user/userActions';
 
 // External
 import { connect } from 'react-redux';
@@ -13,28 +14,10 @@ import SignInUpPage from './views/SignInUpPage';
 import CheckOutPage from './views/CheckOutPage';
 import { Navbar } from './components';
 
-const GaretaApp = ({ currentUser }) => {
+const GaretaApp = ({ currentUser, checkUserSession }) => {
   /* eslint-disable */
   useEffect(() => {
-    // // Listed to Auth changed
-    // const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-    //   if (userAuth) {
-    //     // Create user or return user data if is already exists
-    //     const userRef = await createUserProfileDocument(userAuth);
-
-    //     // Store returned data
-    //     userRef.onSnapshot(snapShot => {
-    //       setCurrentUser({
-    //         id: snapShot.id,
-    //         ...snapShot.data()
-    //       });
-    //     });
-    //   } else {
-    //     // userAuth is null when returned
-    //     setCurrentUser(userAuth);
-    //   }
-    // });
-
+    checkUserSession()
     // return () => {
     //   unsubscribeFromAuth();
     // };
@@ -62,4 +45,7 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 });
 
-export default connect(mapStateToProps)(GaretaApp);
+export default connect(
+  mapStateToProps,
+  { checkUserSession }
+)(GaretaApp);
