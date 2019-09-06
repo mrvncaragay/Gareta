@@ -1,12 +1,7 @@
 import { takeLatest, put, all, call } from 'redux-saga/effects';
 
 import UserActionsTypes from './types';
-import {
-  googleSignInSuccess,
-  googleSignInFailure,
-  emailSignInSuccess,
-  emailSignInFailure
-} from './userActions';
+import { signInSuccess, signInFailure } from './userActions';
 
 // Google Signin
 import {
@@ -15,37 +10,37 @@ import {
   createUserProfileDocument
 } from '../../firebase/util';
 
-export function* signInWithGoogle() {
+export function* getSnapshotFromUserAuth(userAuth) {
   try {
-    const { user } = yield auth.signInWithPopup(googleProvider);
-    const userRef = yield call(createUserProfileDocument, user);
+    const userRef = yield call(createUserProfileDocument, userAuth);
     const userSnapShot = yield userRef.get();
 
     yield put(
-      googleSignInSuccess({
+      signInSuccess({
         id: userSnapShot.id,
         ...userSnapShot.data()
       })
     );
   } catch (error) {
-    yield put(googleSignInFailure(error));
+    yield put(signInFailure(error));
+  }
+}
+
+export function* signInWithGoogle() {
+  try {
+    const { user } = yield auth.signInWithPopup(googleProvider);
+    yield getSnapshotFromUserAuth(user);
+  } catch (error) {
+    yield put(signInFailure(error));
   }
 }
 
 export function* signInWithEmail({ payload: { email, password } }) {
   try {
     const { user } = yield auth.signInWithEmailAndPassword(email, password);
-    const userRef = yield call(createUserProfileDocument, user);
-    const userSnapShot = yield userRef.get();
-
-    yield put(
-      emailSignInSuccess({
-        id: userSnapShot.id,
-        ...userSnapShot.data()
-      })
-    );
+    yield getSnapshotFromUserAuth(user);
   } catch (error) {
-    yield put(emailSignInFailure(error));
+    yield put(signInFailure(error));
   }
 }
 
@@ -57,6 +52,7 @@ export function* onEmailSignInStart() {
   yield takeLatest(UserActionsTypes.EMAIL_SIGN_IN_START, signInWithEmail);
 }
 
+// Export to root saga
 export function* userSagas() {
   yield all([call(onGoogleSignInStart), call(onEmailSignInStart)]);
 }

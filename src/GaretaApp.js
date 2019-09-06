@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { setCurrentUser } from './redux/user/userActions';
 import { selectCurrentUser } from './redux/user/selectors';
 
 // External
@@ -14,7 +13,7 @@ import SignInUpPage from './views/SignInUpPage';
 import CheckOutPage from './views/CheckOutPage';
 import { Navbar } from './components';
 
-const GaretaApp = ({ currentUser, setCurrentUser }) => {
+const GaretaApp = ({ currentUser }) => {
   /* eslint-disable */
   useEffect(() => {
     // // Listed to Auth changed
@@ -63,11 +62,4 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 });
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(GaretaApp);
+export default connect(mapStateToProps)(GaretaApp);
