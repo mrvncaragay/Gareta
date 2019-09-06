@@ -48,7 +48,7 @@ const CheckOutItem = ({ cartItem, clearItem, removeItem, addItem }) => {
       </Typography>
 
       <Typography component='span' variant='subtitle2'>
-        {price}
+        ${price}
       </Typography>
       <div className={classes.removeBtn} onClick={() => clearItem(cartItem)}>
         &#10005;

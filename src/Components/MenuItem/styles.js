@@ -34,6 +34,14 @@ export default makeStyles(theme => ({
       '& $content': {
         opacity: 0.9
       }
+    },
+
+    [theme.breakpoints.down('md')]: {
+      height: '200px',
+
+      '&.large': {
+        height: '200px'
+      }
     }
   },
 

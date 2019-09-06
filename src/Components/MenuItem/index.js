@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 // Component styles
 import styles from './styles';
 
-const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
+const MenuItem = ({ title, imageUrl, size, history, linkUrl }) => {
   const classes = styles();
 
   return (

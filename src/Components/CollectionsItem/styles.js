@@ -12,6 +12,12 @@ export default makeStyles(theme => ({
 
     '&:hover $button': {
       display: 'flex'
+    },
+
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+      height: '300px',
+      marginBottom: theme.spacing(2)
     }
   },
 
@@ -45,6 +51,13 @@ export default makeStyles(theme => ({
 
     '&:hover': {
       opacity: '1'
+    },
+
+    [theme.breakpoints.down('md')]: {
+      display: 'flex',
+      opacity: '0.5',
+      color: theme.palette.text.primary,
+      backgroundColor: 'white'
     }
   }
 }));

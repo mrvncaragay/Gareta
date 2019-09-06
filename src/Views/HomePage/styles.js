@@ -5,6 +5,10 @@ export default makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: theme.spacing(2, 6, 6, 6)
+    padding: theme.spacing(2, 6, 6, 6),
+
+    [theme.breakpoints.down('md')]: {
+      padding: theme.spacing(0)
+    }
   }
 }));

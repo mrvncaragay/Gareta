@@ -91,7 +91,7 @@ const SignUp = ({ signUpStart }) => {
           onChange={handleChange}
         />
 
-        <Button variant='outlined' type='submit'>
+        <Button className={classes.signUp} variant='outlined' type='submit'>
           Sign Up
         </Button>
       </form>

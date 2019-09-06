@@ -10,14 +10,22 @@ export default makeStyles(theme => ({
     alignItems: 'center',
 
     '& span': {
-      width: '23%'
+      width: '23%',
+
+      [theme.breakpoints.down('md')]: {
+        fontSize: '12px'
+      }
     }
   },
 
   img: {
     width: '20%',
     marginRight: theme.spacing(3.2),
-    height: '130px'
+    height: '130px',
+
+    [theme.breakpoints.down('md')]: {
+      marginRight: theme.spacing(1)
+    }
   },
 
   removeBtn: {

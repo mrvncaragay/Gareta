@@ -24,7 +24,7 @@ const ShopPage = ({ match, fetchCollectionsStart }) => {
 
     // Clean up
     return () => {}
-  }, [])
+  }, [fetchCollectionsStart])
   /* eslint-enable */
 
   return (

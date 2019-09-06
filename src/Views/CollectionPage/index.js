@@ -20,11 +20,7 @@ const CollectionPage = ({ match, collection }) => {
 
   return (
     <div className={classes.root}>
-      <Typography
-        style={{ marginBottom: '32px' }}
-        className={classes.title}
-        variant='h1'
-      >
+      <Typography className={classes.title} variant='h1'>
         {title}
       </Typography>
 

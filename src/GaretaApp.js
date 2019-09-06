@@ -21,7 +21,7 @@ const GaretaApp = ({ currentUser, checkUserSession }) => {
     // return () => {
     //   unsubscribeFromAuth();
     // };
-  }, []);
+  }, [checkUserSession]);
   /* eslint-enable */
 
   return (

@@ -6,6 +6,18 @@ export default makeStyles(theme => ({
   items: {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr 1fr',
-    gridGap: theme.spacing(1)
+    gridGap: theme.spacing(1),
+
+    [theme.breakpoints.down('md')]: {
+      gridTemplateColumns: '1fr 1fr'
+    }
+  },
+
+  title: {
+    marginBottom: '32px',
+
+    [theme.breakpoints.down('md')]: {
+      marginBottom: theme.spacing(1)
+    }
   }
 }));

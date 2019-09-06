@@ -7,6 +7,10 @@ export default makeStyles(theme => ({
 
     '& h4': {
       marginBottom: theme.spacing(2)
+    },
+
+    [theme.breakpoints.down('md')]: {
+      margin: theme.spacing(3)
     }
   },
 
@@ -15,6 +19,14 @@ export default makeStyles(theme => ({
   },
 
   password: {
-    marginBottom: theme.spacing(4)
+    marginBottom: theme.spacing(4),
+
+    [theme.breakpoints.down('md')]: {
+      margin: theme.spacing(0, 0, 2, 0)
+    }
+  },
+
+  signUp: {
+    width: '100%'
   }
 }));

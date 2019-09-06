@@ -7,14 +7,34 @@ export default makeStyles(theme => ({
 
     '& h4': {
       marginBottom: theme.spacing(2)
+    },
+
+    [theme.breakpoints.down('md')]: {
+      margin: theme.spacing(3)
     }
   },
 
   form: {
-    marginTop: theme.spacing(4)
+    marginTop: theme.spacing(4),
+
+    [theme.breakpoints.down('md')]: {
+      display: 'flex',
+      flexDirection: 'column'
+    }
   },
 
   password: {
     marginBottom: theme.spacing(4)
+  },
+
+  signIn: {
+    [theme.breakpoints.down('md')]: {
+      margin: theme.spacing(0, 0, 2, 0),
+      padding: theme.spacing(1)
+    }
+  },
+
+  google: {
+    width: '100%'
   }
 }));

@@ -7,7 +7,12 @@ export default makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    margin: '50px auto 0'
+    margin: '50px auto 0',
+
+    [theme.breakpoints.down('md')]: {
+      marginTop: theme.spacing(2),
+      width: '90%'
+    }
   },
 
   checkOutHeader: {
@@ -23,7 +28,17 @@ export default makeStyles(theme => ({
     width: '23%',
 
     '&:last-child': {
-      width: '8%'
+      width: '8%',
+
+      [theme.breakpoints.down('md')]: {
+        width: '11%'
+      }
+    },
+
+    '& span': {
+      [theme.breakpoints.down('md')]: {
+        fontSize: '12px'
+      }
     }
   },
 

@@ -64,11 +64,16 @@ const SignIn = ({ googleSignInStart, emailSignInStart }) => {
           onChange={handleChange}
         />
 
-        <Button variant='outlined' type='submit'>
+        <Button className={classes.signIn} variant='outlined' type='submit'>
           Sign in
         </Button>
 
-        <Button onClick={googleSignInStart} color='primary' variant='contained'>
+        <Button
+          className={classes.google}
+          onClick={googleSignInStart}
+          color='primary'
+          variant='contained'
+        >
           Sign in with google
         </Button>
       </form>
