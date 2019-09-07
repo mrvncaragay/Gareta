@@ -20,7 +20,8 @@ const CheckOutPage = lazy(() => import('./views/CheckOutPage'));
 const GaretaApp = ({ currentUser, checkUserSession }) => {
   /* eslint-disable */
   useEffect(() => {
-    checkUserSession()
+    checkUserSession();
+    
     // return () => {
     //   unsubscribeFromAuth();
     // };

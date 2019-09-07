@@ -35,6 +35,8 @@ export default makeStyles(theme => ({
   },
 
   google: {
-    width: '100%'
+    [theme.breakpoints.down('md')]: {
+      width: '100%'
+    }
   }
 }));

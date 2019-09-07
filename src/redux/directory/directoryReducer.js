@@ -31,6 +31,13 @@ const INITIAL_STATE = {
       size: 'large',
       id: 5,
       linkUrl: 'shop/mens'
+    },
+    {
+      title: 'consoles',
+      imageUrl: 'https://gareta.s3-us-west-1.amazonaws.com/Console/main.jpg',
+      id: 6,
+      size: 'large',
+      linkUrl: 'shop/consoles'
     }
   ]
 };
