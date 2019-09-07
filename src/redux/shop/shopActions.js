@@ -1,8 +1,5 @@
 import ShopActionTypes from './types';
 
-// External
-import { firestore, convertCollectionSnapshotToMap } from '../../firebase/util';
-
 export const updateCollections = collectionsMap => ({
   type: ShopActionTypes.UPDATE_COLLECTIONS,
   payload: collectionsMap
