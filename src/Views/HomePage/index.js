@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import { fetchCategoriesStart } from '../../redux/directory/directoryActions';
 
 // External
@@ -24,7 +25,9 @@ const HomePage = ({ fetchCategoriesStart }) => {
 
   return (
     <div className={classes.root}>
-      <Directory />
+      <CSSTransition classNames='fade' in={true} appear={true} timeout={800}>
+        <Directory />
+      </CSSTransition>
     </div>
   );
 };

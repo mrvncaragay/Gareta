@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { selectCollection } from '../../redux/shop/selectors';
 
 // External
@@ -13,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 // Component styles
 import styles from './styles';
 
-const CollectionPage = ({ match, collection }) => {
+const CollectionPage = ({ collection }) => {
   const classes = styles();
 
   const { title, items } = collection;

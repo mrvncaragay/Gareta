@@ -11,6 +11,9 @@ import { createStructuredSelector } from 'reselect';
 import Spinner from './components/Spinners/Spinner';
 import { Navbar, ErrorBoundary } from './components';
 
+// Global styles
+import styles from './GaretaAppStyles';
+
 // Lazy load Shared component
 const HomePage = lazy(() => import('./views/HomePage'));
 const ShopPage = lazy(() => import('./views/ShopPage'));
@@ -18,6 +21,8 @@ const SignInUpPage = lazy(() => import('./views/SignInUpPage'));
 const CheckOutPage = lazy(() => import('./views/CheckOutPage'));
 
 const GaretaApp = ({ currentUser, checkUserSession }) => {
+  styles();
+
   /* eslint-disable */
   useEffect(() => {
     checkUserSession();

@@ -37,6 +37,7 @@ const ShopPage = ({ match, fetchCollectionsStart }) => {
           path={match.path}
           component={CollectionsOverviewContainer}
         />
+
         <Route
           path={`${match.path}/:collectionId`}
           component={CollectionsPageContainer}

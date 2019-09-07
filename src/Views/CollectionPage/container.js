@@ -4,7 +4,8 @@ import { compose } from 'redux';
 import { selectIsCollectionFetching } from '../../redux/shop/selectors';
 
 // Shared components
-import { Spinners } from '../../components';
+import { Spinners, Fade } from '../../components';
+
 import CollectionPage from './index';
 
 const mapStateToProps = createStructuredSelector({
@@ -13,7 +14,8 @@ const mapStateToProps = createStructuredSelector({
 
 const CollectionPageContainer = compose(
   connect(mapStateToProps),
-  Spinners
+  Spinners,
+  Fade
 )(CollectionPage);
 
 export default CollectionPageContainer;
