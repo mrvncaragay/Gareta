@@ -1,49 +1,36 @@
+import directoryActionTypes from './types';
+
 const INITIAL_STATE = {
-  sections: [
-    {
-      title: 'hats',
-      imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-      id: 1,
-      linkUrl: 'shop/hats'
-    },
-    {
-      title: 'jackets',
-      imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-      id: 2,
-      linkUrl: 'shop/jackets'
-    },
-    {
-      title: 'sneakers',
-      imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-      id: 3,
-      linkUrl: 'shop/sneakers'
-    },
-    {
-      title: 'womens',
-      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-      size: 'large',
-      id: 4,
-      linkUrl: 'shop/womens'
-    },
-    {
-      title: 'mens',
-      imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-      size: 'large',
-      id: 5,
-      linkUrl: 'shop/mens'
-    },
-    {
-      title: 'consoles',
-      imageUrl: 'https://gareta.s3-us-west-1.amazonaws.com/Console/main.jpg',
-      id: 6,
-      size: 'large',
-      linkUrl: 'shop/consoles'
-    }
-  ]
+  sections: null,
+  isFetching: false,
+  errorMessage: undefined
 };
 
 const directoryReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case directoryActionTypes.FETCH_CATEGORIES_START: {
+      return {
+        ...state,
+        isFetching: true
+      };
+    }
+
+    case directoryActionTypes.FETCH_CATEGORIES_SUCCESS: {
+      return {
+        ...state,
+        isFetching: false,
+        sections: action.payload
+      };
+    }
+
+    case directoryActionTypes.FETCH_CATEGORIES_FAILURE: {
+      return {
+        ...state,
+        isFetching: false,
+        errorMessage: action.payload
+      };
+    }
+
     default:
       return state;
   }
