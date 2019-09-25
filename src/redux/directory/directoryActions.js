@@ -1,8 +1,10 @@
 import CategoryActionTypes from './types';
 
-export const fetchCategoriesStart = () => ({
-  type: CategoryActionTypes.FETCH_CATEGORIES_START
-});
+export const fetchCategoriesStart = () => {
+  return {
+    type: CategoryActionTypes.FETCH_CATEGORIES_START
+  };
+};
 
 export const fetchCategoriesSuccess = directoriesMap => ({
   type: CategoryActionTypes.FETCH_CATEGORIES_SUCCESS,

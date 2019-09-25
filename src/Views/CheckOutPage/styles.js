@@ -13,6 +13,10 @@ export default makeStyles(theme => ({
     [theme.breakpoints.down('md')]: {
       marginTop: theme.spacing(2),
       width: '90%'
+    },
+
+    '& button': {
+      marginLeft: 'auto'
     }
   },
 
@@ -47,5 +51,12 @@ export default makeStyles(theme => ({
     marginTop: '30px',
     marginLeft: 'auto',
     fontSize: '36px'
+  },
+
+  testWarning: {
+    textAlign: 'center',
+    marginTop: '40px',
+    fontSize: '24px',
+    color: 'red'
   }
 }));

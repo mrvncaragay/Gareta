@@ -14,14 +14,9 @@ import styles from './styles';
 const HomePage = ({ fetchCategoriesStart }) => {
   const classes = styles();
 
-  /* eslint-disable */
   useEffect(() => {
-    fetchCategoriesStart()
-
-    // Clean up
-    return () => {}
-  }, [fetchCategoriesStart])
-  /* eslint-enable */
+    fetchCategoriesStart();
+  }, [fetchCategoriesStart]);
 
   return (
     <div className={classes.root}>

@@ -11,3 +11,4 @@ export { default as CollectionsItem } from './CollectionsItem';
 export { default as Spinners } from './Spinners';
 export { default as ErrorBoundary } from './ErrorBoundary';
 export { default as Fade } from './Fade';
+export { default as StripeButton } from './stripeButton';

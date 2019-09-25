@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 
+import userReducer from './user/userReducer';
 import directoryReducer from './directory/directoryReducer';
 import shopReducer from './shop/shopReducer';
-import userReducer from './user/userReducer';
 import cartReducer from './cart/cartReducer';
 
 export default combineReducers({
+  user: userReducer,
   directory: directoryReducer,
   shop: shopReducer,
-  user: userReducer,
   cart: cartReducer
 });
