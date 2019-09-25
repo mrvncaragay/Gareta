@@ -1,5 +1,5 @@
 ### `Softdev` 
-Gareta is an e-comerce platform built for the web and mobile. It enables the end-users to browse available product such as men/women apparel, electronics, toys, and more. 
+Gareta is an e-comerce platform built for the web and mobile platform. It enables the end-users to browse available product such as men/women apparel, electronics, toys, and more. 
 
 #### `View the project live ->` https://gareta-e4fdd.firebaseapp.com
 
@@ -7,7 +7,6 @@ Gareta is an e-comerce platform built for the web and mobile. It enables the end
 The reason why i created this project is to create awesome react projects professionally. 
 
 ### `Tech/Framework used`
-Below are main technologies used for this project.
 
   #### `Backend`
     * Firebase (Authencation and DB)
@@ -24,7 +23,7 @@ Below are screenshots of the main pages of the application.
 
 #### `Home Page`
 
-![Alt text](https://gareta.s3-us-west-1.amazonaws.com/github/homepage.jpg "Homepage")
+![Alt text](https://gareta.s3-us-west-1.amazonaws.com/github/homepage2.jpg "Homepage")
 
 #### `Shop Page`
 
