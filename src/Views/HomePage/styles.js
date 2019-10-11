@@ -10,5 +10,11 @@ export default makeStyles(theme => ({
     [theme.breakpoints.down('md')]: {
       padding: theme.spacing(0)
     }
+  },
+
+  content: {
+    border: '1px solid black',
+    width: '100%',
+    height: '100vh'
   }
 }));

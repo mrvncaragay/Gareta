@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 // Shared component
-import MenuItem from '../MenuItem';
+import { Main } from './components';
 
 // Component styles
 import styles from './styles';
@@ -16,9 +16,9 @@ const Directory = ({ sections }) => {
 
   return (
     <div className={classes.root}>
-      {sections.map(({ id, ...sectionProps }) => (
-        <MenuItem key={id} {...sectionProps} />
-      ))}
+      <Main height={600} sections={sections} />
+      <div style={{ height: '100vh' }}>content 1</div>
+      <div style={{ height: '100vh' }}>content 2</div>
     </div>
   );
 };

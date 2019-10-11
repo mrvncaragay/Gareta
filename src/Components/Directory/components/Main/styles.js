@@ -3,7 +3,10 @@ import { makeStyles } from '@material-ui/styles';
 export default makeStyles(theme => ({
   root: {
     display: 'flex',
-    flexDirection: 'column',
-    width: '100%'
+    width: '100%',
+    position: 'relative',
+    opacity: 0,
+    top: '50px',
+    height: props => props.height
   }
 }));

@@ -3,25 +3,25 @@ import { makeStyles } from '@material-ui/styles';
 export default makeStyles(theme => ({
   root: {
     minWidth: '30%',
-    height: '240px',
+    height: 'auto',
     flex: '1 1 auto',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: theme.spacing(0, 1, 2, 2),
+    // margin: theme.spacing(0, 1, 2, 2),
     overflow: 'hidden',
 
-    '&.large': {
-      height: '380px'
-    },
+    // '&.large': {
+    //   height: '380px'
+    // },
 
-    '&:first-child': {
-      marginRight: theme.spacing(1)
-    },
+    // '&:first-child': {
+    //   marginRight: theme.spacing(1)
+    // },
 
-    '&:last-child': {
-      marginLeft: theme.spacing(1)
-    },
+    // '&:last-child': {
+    //   marginLeft: theme.spacing(1)
+    // },
 
     '&:hover': {
       cursor: 'pointer',
@@ -32,7 +32,11 @@ export default makeStyles(theme => ({
       },
 
       '& $content': {
-        opacity: 0.9
+        backgroundColor: 'white',
+
+        '& h3': {
+          color: theme.palette.text.primary
+        }
       }
     },
 
@@ -54,14 +58,17 @@ export default makeStyles(theme => ({
   },
 
   content: {
-    height: '90px',
+    height: '50px',
     padding: theme.spacing(0, 3),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: theme.palette.common.white,
-    opacity: '0.6',
-    position: 'absolute'
+    border: '1px solid white',
+    position: 'absolute',
+
+    '& h3': {
+      color: 'white'
+    }
   }
 }));

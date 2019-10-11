@@ -21,8 +21,7 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl }) => {
       />
 
       <div className={classes.content}>
-        <Typography variant='h3'>{title}</Typography>
-        <Typography variant='subtitle1'>Shop Now</Typography>
+        <Typography variant='h3'>shop {title}</Typography>
       </div>
     </div>
   );

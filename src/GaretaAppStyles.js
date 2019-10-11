@@ -34,6 +34,18 @@ export default makeStyles(theme => ({
 
     '.fade-exit-done': {
       opacity: 0
+    },
+
+    '.slideIn': {
+      opacity: 1,
+      top: '0px',
+      transition: 'all 1s ease-in-out'
+    },
+
+    '.slideOut': {
+      opacity: 0,
+      top: '50px',
+      transition: 'all 1s ease-in-out'
     }
   }
 }));
