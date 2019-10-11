@@ -3,15 +3,14 @@ import palette from '../palette';
 
 export default {
   root: {
-    borderRadius: 'none',
-    marginRight: '16px'
+    borderRadius: 'none'
   },
 
   outlined: {
-    backgroundColor: palette.text.primary,
     letterSpacing: '0.15em',
     padding: '10px 32px 10px 32px',
     color: 'white',
+    border: '1px solid white',
 
     '&:hover': {
       backgroundColor: 'white',

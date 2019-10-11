@@ -7,7 +7,7 @@ export default {
     color: palette.text.primary,
     fontWeight: '400',
     fontSize: '35px',
-    letterSpacing: '-1.5px',
+    letterSpacing: '1px',
     lineHeight: '40px',
     textTransform: 'uppercase'
   },
