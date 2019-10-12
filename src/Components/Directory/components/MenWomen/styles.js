@@ -7,6 +7,10 @@ export default makeStyles(theme => ({
     position: 'relative',
     opacity: 0,
     top: '50px',
-    height: props => props.height
+    height: props => props.height,
+
+    '& a': {
+      position: 'absolute'
+    }
   }
 }));

@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useIntersect from '../../../../hooks/useIntersect';
 
 // Material UI component
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 // Shared component
-import MenuItemImage from '../../../MenuItemImage';
-import MenuItemButton from '../../../MenuItemButton';
-import MenuItemText from '../../../MenuItemText';
+import MenuItemImage from '../MenuItemImage';
+import MenuItemText from '../MenuItemText';
 
 // Component styles
 import styles from './styles';
@@ -34,9 +35,11 @@ const MenWomen = ({ sections, ...props }) => {
 
       {sections
         .filter(section => section.title === 'women' || section.title === 'men')
-        .map(({ id, title, imageUrl, ...rest }) => (
+        .map(({ id, title, imageUrl, linkUrl }) => (
           <MenuItemImage key={id} imageUrl={imageUrl}>
-            <MenuItemButton type='outlined' title={`shop ${title}`} {...rest} />
+            <Link to={linkUrl}>
+              <Button variant='outlined'>Shop {title}</Button>
+            </Link>
           </MenuItemImage>
         ))}
     </div>

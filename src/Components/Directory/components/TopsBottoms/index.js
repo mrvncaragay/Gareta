@@ -7,9 +7,9 @@ import TwoColumns from '../TwoColumns';
 // Component styles
 import styles from './styles';
 
-const TITLE = ['Must-Have Denim', 'Need Now Jackets'];
+const TITLE = ['Soft & Cozy Tops', 'Essential Pants'];
 
-const DenimJackets = ({ sections, ...props }) => {
+const TopsBottoms = ({ sections, ...props }) => {
   const classes = styles(props);
   const [ref, isIntersected] = useIntersect({
     /* Optional options */
@@ -24,7 +24,7 @@ const DenimJackets = ({ sections, ...props }) => {
       {sections
         .filter(
           section =>
-            section.title === 'womens-jeans' || section.title === 'mens-coats'
+            section.title === 'womens-tops' || section.title === 'mens-bottoms'
         )
         .map(({ id, imageUrl }, i) => (
           <TwoColumns key={id} imageUrl={imageUrl} title={TITLE[i]} />
@@ -33,4 +33,4 @@ const DenimJackets = ({ sections, ...props }) => {
   );
 };
 
-export default DenimJackets;
+export default TopsBottoms;
