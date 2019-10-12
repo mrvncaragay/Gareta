@@ -6,10 +6,11 @@ export default {
   h1: {
     color: palette.text.primary,
     fontWeight: '400',
-    fontSize: '35px',
+    fontSize: '48px',
     letterSpacing: '1px',
-    lineHeight: '40px',
-    textTransform: 'uppercase'
+    lineHeight: '48px',
+    textTransform: 'none',
+    fontFamily: 'serif'
   },
 
   h2: {
@@ -32,10 +33,10 @@ export default {
 
   h4: {
     color: palette.text.primary,
-    fontWeight: '600',
+    fontWeight: '500',
     fontSize: '20px',
     letterSpacing: '-0.5px',
-    lineHeight: '24px'
+    lineHeight: '30px'
   },
   h5: {
     color: palette.text.primary,
@@ -79,14 +80,14 @@ export default {
     letterSpacing: '-0.04px',
     lineHeight: '14px'
   },
-  button: {
-    color: palette.text.primary,
-    fontSize: '14px'
-  },
+
   caption: {
-    color: palette.text.secondary,
-    fontSize: '12px',
-    letterSpacing: '0.3px',
-    lineHeight: '16px'
+    color: palette.text.primary,
+    fontSize: '24px',
+    letterSpacing: '0px',
+    lineHeight: '40px',
+    fontWeight: '900',
+    fontFamily: 'serif',
+    margin: '16px 0 16px 0'
   }
 };

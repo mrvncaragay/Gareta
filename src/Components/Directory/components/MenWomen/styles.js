@@ -7,6 +7,7 @@ export default makeStyles(theme => ({
     position: 'relative',
     opacity: 0,
     top: '50px',
+    marginBottom: '100px',
     height: props => props.height,
 
     '& a': {

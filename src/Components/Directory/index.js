@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 // Shared component
-import { MenWomen, DenimJackets, TopsBottoms } from './components';
+import { MenWomen, DenimJackets, TopsBottoms, Favorites } from './components';
 
 // Component styles
 import styles from './styles';
@@ -19,8 +19,7 @@ const Directory = ({ sections }) => {
       <DenimJackets height={800} sections={sections} />
       <TopsBottoms height={800} sections={sections} />
       <MenWomen height={600} sections={sections} />
-      <div style={{ height: '100vh' }}>content 1</div>
-      <div style={{ height: '100vh' }}>content 2</div>
+      <Favorites height={600} sections={sections} />
     </div>
   );
 };

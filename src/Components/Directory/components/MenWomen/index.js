@@ -7,8 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 // Shared component
-import MenuItemImage from '../MenuItemImage';
-import MenuItemText from '../MenuItemText';
+import Image from '../MenuItemImage';
+import Text from '../MenuItemText';
 
 // Component styles
 import styles from './styles';
@@ -25,22 +25,22 @@ const MenWomen = ({ sections, ...props }) => {
       className={`${classes.root} ${isIntersected ? 'slideIn' : 'slideOut'}`}
       ref={ref}
     >
-      <MenuItemText>
+      <Text>
         <Typography variant='h4'>Trend Now</Typography>
         <Typography variant='h1'>
           First Days of <em>fall</em>
         </Typography>
         <Typography variant='h4'>Key pieces for the new you.</Typography>
-      </MenuItemText>
+      </Text>
 
       {sections
         .filter(section => section.title === 'women' || section.title === 'men')
         .map(({ id, title, imageUrl, linkUrl }) => (
-          <MenuItemImage key={id} imageUrl={imageUrl}>
+          <Image key={id} imageUrl={imageUrl}>
             <Link to={linkUrl}>
               <Button variant='outlined'>Shop {title}</Button>
             </Link>
-          </MenuItemImage>
+          </Image>
         ))}
     </div>
   );

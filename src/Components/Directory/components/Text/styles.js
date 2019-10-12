@@ -16,8 +16,6 @@ export default makeStyles(theme => ({
 
     '& h1': {
       fontSize: '48px',
-      fontFamily: 'serif',
-      textTransform: 'none',
       margin: theme.spacing(0, 0, 2, 0)
     }
   }
