@@ -7,8 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 // Shared component
-import Image from '../MenuItemImage';
-import Text from '../MenuItemText';
+import Image from '../Image';
+import Text from '../Text';
 
 // Component styles
 import styles from './styles';

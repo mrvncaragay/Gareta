@@ -4,7 +4,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 
 // Shared component
-import MenuItemImage from '../../../MenuItemImage';
+import Image from '../Image';
 import Typography from '@material-ui/core/Typography';
 
 // Component styles
@@ -15,7 +15,7 @@ const TwoColumns = ({ imageUrl, title }) => {
 
   return (
     <div className={classes.root}>
-      <MenuItemImage imageUrl={imageUrl} />
+      <Image imageUrl={imageUrl} />
 
       <div className={classes.title}>
         <Typography variant='h1'>{title}</Typography>

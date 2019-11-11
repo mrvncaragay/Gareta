@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/styles';
 
 export default makeStyles(theme => ({
   root: {
-    height: 'auto',
+    height: '100%',
     width: props => (props.width ? `${props.width}%` : `100%`),
     display: 'flex',
     alignItems: 'center',
