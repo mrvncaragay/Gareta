@@ -2,6 +2,7 @@ import React, { useEffect, lazy, Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { selectCurrentUser } from './redux/user/selectors';
 import { checkUserSession } from './redux/user/userActions';
+import { fetchCategoriesStart } from './redux/directory/directoryActions';
 
 // External
 import { connect } from 'react-redux';
@@ -20,21 +21,23 @@ const ShopPage = lazy(() => import('./views/ShopPage'));
 const SignInUpPage = lazy(() => import('./views/SignInUpPage'));
 const CheckOutPage = lazy(() => import('./views/CheckOutPage'));
 
-const GaretaApp = ({ currentUser, checkUserSession }) => {
+const GaretaApp = ({ currentUser, checkUserSession, fetchCategoriesStart }) => {
   styles();
 
+  /* eslint-disable */
   useEffect(() => {
     checkUserSession();
-  }, [checkUserSession]);
+    fetchCategoriesStart();
+  }, []);
+  /* eslint-enable */
 
   return (
-    <div>
+    <>
       <Navbar />
       <Switch>
         <ErrorBoundary>
           <Suspense fallback={<Spinner />}>
             <Route exact path='/' component={HomePage} />
-
             <Route path='/shop' component={ShopPage} />
             <Route exact path='/checkout' component={CheckOutPage} />
             <Route
@@ -47,7 +50,7 @@ const GaretaApp = ({ currentUser, checkUserSession }) => {
           </Suspense>
         </ErrorBoundary>
       </Switch>
-    </div>
+    </>
   );
 };
 
@@ -55,7 +58,7 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 });
 
-export default connect(
-  mapStateToProps,
-  { checkUserSession }
-)(GaretaApp);
+export default connect(mapStateToProps, {
+  checkUserSession,
+  fetchCategoriesStart
+})(GaretaApp);

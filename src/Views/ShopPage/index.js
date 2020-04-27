@@ -47,7 +47,4 @@ const ShopPage = ({ match, fetchCollectionsStart }) => {
   );
 };
 
-export default connect(
-  null,
-  { fetchCollectionsStart }
-)(ShopPage);
+export default connect(null, { fetchCollectionsStart })(ShopPage);

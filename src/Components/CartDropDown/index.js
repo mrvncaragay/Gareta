@@ -36,7 +36,9 @@ const CartDropDown = ({ cartItems, dispatch }) => {
       </div>
 
       <Link to='/checkout' onClick={() => dispatch(toggleCartHidden())}>
-        <Button variant='outlined'>Checkout</Button>
+        <Button variant='outlined' className={classes.checkOut}>
+          Checkout
+        </Button>
       </Link>
     </div>
   );

@@ -99,7 +99,4 @@ const SignUp = ({ signUpStart }) => {
   );
 };
 
-export default connect(
-  null,
-  { signUpStart }
-)(SignUp);
+export default connect(null, { signUpStart })(SignUp);

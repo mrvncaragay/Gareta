@@ -81,7 +81,4 @@ const SignIn = ({ googleSignInStart, emailSignInStart }) => {
   );
 };
 
-export default connect(
-  null,
-  { googleSignInStart, emailSignInStart }
-)(SignIn);
+export default connect(null, { googleSignInStart, emailSignInStart })(SignIn);

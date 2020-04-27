@@ -16,10 +16,10 @@ const Directory = ({ sections }) => {
 
   return (
     <div className={classes.root}>
-      <DenimJackets height={800} sections={sections} />
-      <TopsBottoms height={800} sections={sections} />
-      <MenWomen height={600} sections={sections} />
-      <Favorites height={600} sections={sections} />
+      <DenimJackets height={800} sections={sections || []} />
+      <TopsBottoms height={800} sections={sections || []} />
+      <MenWomen height={600} sections={sections || []} />
+      <Favorites height={600} sections={sections || []} />
     </div>
   );
 };

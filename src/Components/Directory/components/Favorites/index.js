@@ -14,6 +14,7 @@ import styles from './styles';
 
 const Favorites = ({ sections, ...props }) => {
   const classes = styles(props);
+
   const [ref, isIntersected] = useIntersect({
     /* Optional options */
     threshold: 0

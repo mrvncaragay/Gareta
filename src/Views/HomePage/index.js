@@ -1,8 +1,4 @@
-import React, { useEffect } from 'react';
-import { fetchCategoriesStart } from '../../redux/directory/directoryActions';
-
-// External
-import { connect } from 'react-redux';
+import React from 'react';
 
 // Shared Component
 import { Directory } from '../../components';
@@ -10,12 +6,8 @@ import { Directory } from '../../components';
 // Component styles
 import styles from './styles';
 
-const HomePage = ({ fetchCategoriesStart }) => {
+const HomePage = () => {
   const classes = styles();
-
-  useEffect(() => {
-    fetchCategoriesStart();
-  }, [fetchCategoriesStart]);
 
   return (
     <div className={classes.root}>
@@ -24,7 +16,4 @@ const HomePage = ({ fetchCategoriesStart }) => {
   );
 };
 
-export default connect(
-  null,
-  { fetchCategoriesStart }
-)(HomePage);
+export default HomePage;

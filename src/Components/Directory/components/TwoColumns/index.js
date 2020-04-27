@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Material UI component
 import Button from '@material-ui/core/Button';
@@ -22,8 +23,12 @@ const TwoColumns = ({ imageUrl, title }) => {
       </div>
 
       <div className={classes.actions}>
-        <Button variant='outlined'>SHOP MEN</Button>
-        <Button variant='outlined'>SHOP WOMEN</Button>
+        <Link to='/shop/jackets'>
+          <Button variant='outlined'>SHOP MEN</Button>
+        </Link>
+        <Link to='/shop/jackets'>
+          <Button variant='outlined'>SHOP WOMEN</Button>
+        </Link>
       </div>
     </div>
   );

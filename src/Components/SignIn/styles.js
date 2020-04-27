@@ -28,6 +28,7 @@ export default makeStyles(theme => ({
   },
 
   signIn: {
+    color: '#5c676b',
     [theme.breakpoints.down('md')]: {
       margin: theme.spacing(0, 0, 2, 0),
       padding: theme.spacing(1)

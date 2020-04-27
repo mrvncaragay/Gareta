@@ -31,5 +31,10 @@ export default makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     overflowY: 'auto'
+  },
+
+  checkOut: {
+    color: '#5c676b',
+    border: '1px solid #5c676b'
   }
 }));

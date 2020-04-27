@@ -34,9 +34,9 @@ const Navbar = ({ currentUser, hidden, signOutStart }) => {
           <Typography variant='h5'> SHOP</Typography>
         </Link>
 
-        <Link to='/' className={classes.option}>
+        {/* <Link to='/' className={classes.option}>
           <Typography variant='h5'> CONTACT</Typography>
-        </Link>
+        </Link> */}
 
         {currentUser ? (
           <Button
@@ -64,7 +64,4 @@ const mapStateToProps = createStructuredSelector({
   hidden: selectCartHidden
 });
 
-export default connect(
-  mapStateToProps,
-  { signOutStart }
-)(Navbar);
+export default connect(mapStateToProps, { signOutStart })(Navbar);

@@ -49,7 +49,4 @@ const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item))
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(CollectionsItem);
+export default connect(null, mapDispatchToProps)(CollectionsItem);
