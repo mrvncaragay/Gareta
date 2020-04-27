@@ -23,7 +23,7 @@ Below are screenshots of the main pages of the application.
 
 #### `Home Page`
 
-![Alt text](https://gareta.s3-us-west-1.amazonaws.com/github/homepage2.jpg "Homepage")
+![Alt text](https://gareta.s3-us-west-1.amazonaws.com/github/homepage2.png "Homepage")
 
 #### `Shop Page`
 
