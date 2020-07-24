@@ -3,6 +3,9 @@ Gareta is an e-comerce platform built for the web and mobile platform. It enable
 
 #### `View the project live ->` https://gareta-e4fdd.firebaseapp.com
 
+### `Native Screenshot (IOS)`
+![Alt text size](https://gareta.s3-us-west-1.amazonaws.com/Native/Simulator+Screen+Shot+-+iPhone+11+Pro+Max+-+2020-07-24+at+11.12.36.png "Homepage")
+
 ### `Motivation` 
 The reason why i created this project is to create awesome react projects professionally. 
 
